@@ -24,14 +24,14 @@ class Net(nn.Module):
         
         ## Note that among the layers to add, consider including:
         # maxpooling layers, multiple conv layers, fully-connected layers, and other layers (such as dropout or batch normalization) to avoid overfitting
-        
+        self.pool = nn.MaxPool2d(2, 2)
 
         
     def forward(self, x):
         ## TODO: Define the feedforward behavior of this model
         ## x is the input image and, as an example, here you may choose to include a pool/conv step:
-        ## x = self.pool(F.relu(self.conv1(x)))
+        x = self.pool(F.relu(self.conv1(x)))
         
-        
+       
         # a modified x, having gone through all the layers of your model, should be returned
         return x
